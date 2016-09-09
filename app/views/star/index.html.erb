@@ -1,7 +1,30 @@
-<script type="text/javascript" src="/assests/game.js"></script>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Game test</title>
+    <script type="text/javascript" src="/assets/phaser.js"></script>
+    <script type="text/javascript" src="/assests/boot.js"></script>
+    <script type="text/javascript" src="/assests/load.js"></script>
+</head>
+<body>
+    <script>
+    var game = new Phaser.Game(800, 512, Phaser.AUTO, 'gameDiv');
+
+    game.state.add('boot', bootState);
+    // game.state.add('menu', menuState);
+    game.state.add('load', loadState);
+
+    game.state.start('boot');
+    </script>
+    <div id="gameDiv"> </div>
+</body>
+</html>
+
+
+<!-- <script type="text/javascript" src="/assests/game.js"></script>
 <script type="text/javascript" src="/assests/menu.js"></script>
 <script type="text/javascript" src="/assests/boot.js"></script>
-<script type="text/javascript" src="/assests/game.js"></script>
+<script type="text/javascript" src="/assests/load.js"></script>
 <script type="text/javascript" src="/assests/game.js"></script>
 
 
@@ -125,21 +148,9 @@ function dieBySpike(player, spikes) {
 
     player.kill();
     game.state.start(game.state.current);
+    score = 0;
 }
 
 </script>
 
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Game test</title>
-    <script type="text/javascript" src="/assests/game.js"></script>
-    <script type="text/javascript" src="/assests/menu.js"></script>
-    <script type="text/javascript" src="/assests/boot.js"></script>
-    <script type="text/javascript" src="/assests/win.js"></script>
-    <script type="text/javascript" src="/assests/fail.js"></script>
-</head>
-<body>
-    <div id="GameDiv"> </div>
-</body>
-</html>
+ -->
