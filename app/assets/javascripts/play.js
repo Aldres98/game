@@ -1,12 +1,15 @@
 var score = 0;
+var platforms;
+var player;
+var scoreText;
+var spikes;
 
-var playstate = {
+
+var playState = {
 
     create: function(){
 
     game.add.sprite(0, 0, 'sky');
-    game.state.add('play', playstate);
-
 
     player = game.add.sprite(32, game.world.height - 150, 'dude');
     game.physics.arcade.enable(player);
@@ -81,30 +84,28 @@ update: function()
     }
 
     game.physics.arcade.collide(stars, platforms);
-    // game.physics.arcade.overlap(player, spikes, dieBySpike, null, this);
+    game.physics.arcade.overlap(player, spikes, dieBySpike, null, this);
     game.physics.arcade.overlap(player, stars, collectStar, null, this);
 
-},
-collectStar: function(player, star) {
+}
+
+
+
+};
+
+function collectStar(player, star) {
 
     star.kill();
     score += 10;
     scoreText.text = 'Score: ' + score;
 
+}
 
-
-},
-
-dieBySpike: function(player, spikes) {
+function dieBySpike(player, spikes) {
 
     player.kill();
     game.state.start(game.state.current);
     score = 0;
 }
-
-
-
-
-};
 
 

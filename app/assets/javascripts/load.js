@@ -1,4 +1,4 @@
-var loadstate = {
+var loadState = {
 
      preload: function(){
 
