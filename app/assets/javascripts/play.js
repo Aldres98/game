@@ -87,9 +87,11 @@ update: function()
     game.physics.arcade.overlap(player, spikes, dieBySpike, null, this);
     game.physics.arcade.overlap(player, stars, collectStar, null, this);
 
-        if(score == 120)
+    if(score == 120)
     {
+
      game.state.start('win')
+
     }
 
 
