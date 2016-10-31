@@ -3,9 +3,10 @@ var platforms;
 var player;
 var scoreText;
 var spikes;
+var bullet;
 
 
-var playState = {
+var playstate = {
 
     create: function(){
 
@@ -39,6 +40,11 @@ var playState = {
     var danger = spikes.create(300, 440, 'spike')
     danger.enableBody = true;
     danger.body.immovable = true;
+
+    // bullets = game.add.group();
+    // bullets.enableBody = true;
+    // var bullet = bullets.create(100, 100, 'bullet')
+        
 
     scoreText = game.add.text(16, 16, 'score: 0', { fontSize: '32px', fill: '#000' });
 
